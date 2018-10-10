@@ -2,7 +2,6 @@ package pl.infoshare;
 
 
 
-
 /**
  * Hello world!
  *
@@ -60,7 +59,9 @@ public class App
 
         System.out.println("--------------------");
 
-        Scanner scanner = new Scanner(System in);
+
+
+
     }
     public static double Function(double a, double b){
         double score = a*a+2*a*b+b*b;

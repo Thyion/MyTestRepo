@@ -35,14 +35,14 @@ public class App
 
         System.out.println("--------------------");
 
-        int a = 3;
-        int b = 4;
+        double a = 3;
+        double b = 4;
 
 
 
-        int sum = a+b;
-        int difference = a-b;
-        int ratio = a*b;
+        double sum = a+b;
+        double difference = a-b;
+        double ratio = a*b;
         double quotient = (double)a/(double)b;
         //int zero = a/0;
 
@@ -52,16 +52,22 @@ public class App
         System.out.println("Quotient (a/b) = " + quotient);
 
 
-        double function 
-
         System.out.println("--------------------");
 
 
+        double ddd = Function(a,b);
+        System.out.println(ddd);
 
+        System.out.println("--------------------");
 
-
-
-
-
+        Scanner scanner = new Scanner(System in);
     }
+    public static double Function(double a, double b){
+        double score = a*a+2*a*b+b*b;
+        return score;
+    }
+
+
+
+
 }

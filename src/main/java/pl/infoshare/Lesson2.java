@@ -1,5 +1,6 @@
 package pl.infoshare;
 
+import java.io.Console;
 import java.util.Scanner;
 
 
@@ -83,6 +84,7 @@ public class Lesson2 {
 
         System.out.println("Hi please give me number: ");
         Scanner scanner2 = new Scanner(System.in);
+        
         String text = scanner2.nextLine();
         System.out.println(Integer.parseInt(text));
         System.out.println("You have number: "+ text);
@@ -120,20 +122,49 @@ public class Lesson2 {
 
         System.out.println("------------");
 
-        String login = "krzysiek";
-        String password = "HASLO";
-
-        Scanner scannerLoginow = new Scanner(System.in);
-        Scanner scannerHasel = new Scanner(System.in);
-        System.out.println("Please write Login: ");
-        String podanyLogin = scannerLoginow.nextLine();
+        User user1 = new User("Krzysiek", "pass1", true);
+        User user2 = new User("Ula", "pass2", false);
+        User user3 = new User("Kuba", "pass2", false);
+        User[] users = new User[3];
+        users[0] = user1;
+        users[1] = user2;
+        users[2] = user3;
+        
+        
+        Scanner usernameScanner = new Scanner(System.in);
+        Scanner passwordScanner = new Scanner(System.in);
+        
+      
+        System.out.println("Please write Username: ");
+        String givenUsername = usernameScanner.nextLine();
         System.out.println("Please write Password: ");
-        String podaneHaslo = scannerHasel.nextLine();
+        String givenPassword = passwordScanner.nextLine();
+        
 
-        if (podanyLogin.equals(login) && podaneHaslo.equals(password));
-        System.out.println(podanyLogin);
-        System.out.println(podaneHaslo);
-
+        for (int i=0; i<users.length; i++) {
+        if (givenUsername.equals(users[i].username) && givenPassword.equals(users[i].password)){
+            System.out.println("Username and password MATCH");
+            System.out.println("You logged in as "+ users[i].username);
+        }
+        if (!givenUsername.equals(users[i].username) && !givenPassword.equals(users[i].password) && i==users.length-1) {
+            System.out.println("Username and password NOT MATCH");
+        }
+        
+        }
 
     }
+}
+
+class User {
+    
+    public String username;
+    public String password;
+    boolean status;
+    
+    public User(String username, String password, boolean status) {
+        this.username = username;
+        this.password = password;
+        this.status = status;
+    }
+    
 }

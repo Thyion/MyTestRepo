@@ -1,8 +1,7 @@
 package pl.infoshare;
 
-import java.io.Console;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 
 public class Lesson2 {
@@ -117,14 +116,14 @@ public class Lesson2 {
         }
 
         System.out.println("------------");
-
+     
         System.out.println("Exercise no 3");
 
         System.out.println("------------");
 
         User user1 = new User("Krzysiek", "pass1", true);
         User user2 = new User("Ula", "pass2", false);
-        User user3 = new User("Kuba", "pass2", false);
+        User user3 = new User("Kuba", "pass3", false);
         User[] users = new User[3];
         users[0] = user1;
         users[1] = user2;
@@ -139,18 +138,32 @@ public class Lesson2 {
         String givenUsername = usernameScanner.nextLine();
         System.out.println("Please write Password: ");
         String givenPassword = passwordScanner.nextLine();
-        
+        User chosen = null;
 
         for (int i=0; i<users.length; i++) {
-        if (givenUsername.equals(users[i].username) && givenPassword.equals(users[i].password)){
+        if (givenUsername.equals(users[i].username) && givenPassword.equals(users[i].password) && users[i].status == true){
             System.out.println("Username and password MATCH");
             System.out.println("You logged in as "+ users[i].username);
+            chosen = users[i];
+            System.out.println("ACCESS GRANTED - ADMIN");
         }
-        if (!givenUsername.equals(users[i].username) && !givenPassword.equals(users[i].password) && i==users.length-1) {
+        if (givenUsername.equals(users[i].username) && givenPassword.equals(users[i].password) && users[i].status == false){
+            System.out.println("Username and password MATCH");
+            System.out.println("You logged in as "+ users[i].username);
+            chosen = users[i];
+            System.out.println("ACCESS GRANTED - NORMAL USER");
+        }
+        if (chosen == null && i==users.length-1){
             System.out.println("Username and password NOT MATCH");
+            System.out.println("ACCESS DENIED");
         }
         
         }
+
+        
+        System.out.println("------------");
+     
+        System.out.println("Nie ukryłem hasła bo nie znalazłem tej funkcjonalności w klasie Scanner");
 
     }
 }

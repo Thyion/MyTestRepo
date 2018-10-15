@@ -107,11 +107,18 @@ public class Lesson3 {
 
         int[] chosenNumbers = new int[6];
 
+        int[] random6Numbers = new int[6];
+
+
+
         System.out.println("Wytypuj 6 liczb w zakresie od 1 do 49");
 
         for (int i = 0 ; i < chosenNumbers.length ; i++) {
-            System.out.println("Wybierz " + i+1 + " liczbe :");
-            chosenNumbers[i] = typeNumber();
+            System.out.println("Wybierz " + (i+1) + " liczbe :");
+
+                int number = typeNumber();
+                chosenNumbers[i] = number;
+
         }
 
 
@@ -120,17 +127,24 @@ public class Lesson3 {
 
     }
 
+    private static boolean czySieZawiera(int number, int[] chosenNumbers) {
+        return true;
+    }
+
     private static int typeNumber() {
         Scanner in = new Scanner(System.in);
 
         int choseNumber;
 
         do {
+
             while (!in.hasNextInt()) {
                     System.out.println("Liczba miala byc od 1-49 !!! Wybierz jeszcze raz.");
                     in.nextInt();
                 }
-                choseNumber = in.nextInt();
+            choseNumber = in.nextInt();
+            if (choseNumber >49 || choseNumber < 1 )
+                System.out.println("Liczba miala byc od 1-49 !!! Wybierz jeszcze raz.");
 
         }while(choseNumber > 49 || choseNumber < 1);
 

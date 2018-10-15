@@ -128,7 +128,12 @@ public class Lesson3 {
     }
 
     private static boolean czySieZawiera(int number, int[] chosenNumbers) {
-        return true;
+        for (int i =0 ; i < chosenNumbers.length;i++){
+            if (chosenNumbers[i]==number) return true;
+        }
+
+
+        return false;
     }
 
     private static int typeNumber() {

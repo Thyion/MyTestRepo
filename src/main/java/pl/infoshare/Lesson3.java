@@ -1,6 +1,6 @@
 package pl.infoshare;
 
-import java.sql.SQLOutput;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -114,10 +114,16 @@ public class Lesson3 {
         System.out.println("Wytypuj 6 liczb w zakresie od 1 do 49");
 
         for (int i = 0 ; i < chosenNumbers.length ; i++) {
+            
             System.out.println("Wybierz " + (i+1) + " liczbe :");
 
                 int number = typeNumber();
+                
+            if ((czySieZawiera(number, chosenNumbers))==true){
+                i--;
+            } else {
                 chosenNumbers[i] = number;
+            }
 
         }
 

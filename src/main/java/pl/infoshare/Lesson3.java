@@ -107,33 +107,61 @@ public class Lesson3 {
 
         int[] chosenNumbers = new int[6];
 
-        int[] random6Numbers = new int[6];
+        int[] randomNumber = new int[6];
 
-
-
+        randomNumber = randomNumbers();
+         
         System.out.println("Wytypuj 6 liczb w zakresie od 1 do 49");
 
-        for (int i = 0 ; i < chosenNumbers.length ; i++) {
+        chosenNumbers = typeNumbers();
+
+        int score = scores(chosenNumbers, randomNumber);
+        
+        System.out.println("Liczba trafionych numerów : " + score);
+        System.out.println(wygrana(score));
+        
+
+    }
+    
+    private static int scores(int[] chosenNumbers, int[] randomNumbers) {
+            
+        int scores = 0;
+        
+        for (int i = 0; i<chosenNumbers.length; i++){
+            for (int j = 0; j < randomNumbers.length; j++){
+                if (chosenNumbers[i]==randomNumbers[j])
+                    scores++;
+            }
+        }
+        
+        
+        return scores;
+    }
+    
+    private static int[] typeNumbers() {
+        
+        int[] chosenumbers = new int[6];
+        
+        for (int i = 0 ; i < chosenumbers.length ; i++) {
             
             System.out.println("Wybierz " + (i+1) + " liczbe :");
 
                 int number = typeNumber();
                 
-            if ((czySieZawiera(number, chosenNumbers))==true){
+            if ((areIncluded(number, chosenumbers))==true){
+                System.out.println("Już taką liczbę wybrałeś. Wybierz jakąś inną.");
                 i--;
             } else {
-                chosenNumbers[i] = number;
+                chosenumbers[i] = number;
             }
 
         }
-
-
-
-
-
+        System.out.println("Wybrałeś : " + chosenumbers[0] + " , " + chosenumbers[1] + " , " + chosenumbers[2] + " , " + chosenumbers[3] + " , " + chosenumbers[4] + " , " + chosenumbers[5]);
+        
+        return chosenumbers;
     }
-
-    private static boolean czySieZawiera(int number, int[] chosenNumbers) {
+    
+    private static boolean areIncluded(int number, int[] chosenNumbers) {
         for (int i =0 ; i < chosenNumbers.length;i++){
             if (chosenNumbers[i]==number) return true;
         }
@@ -162,5 +190,60 @@ public class Lesson3 {
 
         return choseNumber;
 
+    }
+    
+    private static int[] randomNumbers() {
+        int[] randomNumbers = new int[6];
+        
+        
+        
+        Random random = new Random();
+        
+        
+        for (int i = 0 ; i < randomNumbers.length ; i++) {
+            
+            int number = random.nextInt(49)+1;
+                
+            if ((areIncluded(number, randomNumbers))==true){
+                
+                i--;
+            } else {
+                randomNumbers[i] = number;
+            }
+
+        }
+        
+        return randomNumbers;
+    }
+    
+    private static String wygrana(int number) {
+        
+   	        
+        switch (number) {
+            case 0:{
+                return "Niestety nic nie wygrałeś";
+            }
+            case 1: {
+                return "Niestety nic nie wygrałeś";
+            }
+            case 2:{
+                return "Niestety nic nie wygrałeś";
+            }
+            case 3:{
+                return "Wygrałes 20 zł !!!";
+            }
+            case 4:{
+                return "Wygrałeś 300 zł !!!";
+            }
+            case 5:{
+                return "Wygrałeś 8000 zł !!!";
+            }
+            case 6:{
+                return "GRATULACJE !!!! WYGRAŁEŚ 1 000 000 zł !!!!!";
+            }
+            default: {
+            return "default";
+            }
+        }
     }
 }

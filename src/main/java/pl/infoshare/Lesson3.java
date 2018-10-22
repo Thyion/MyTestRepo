@@ -1,5 +1,7 @@
 package pl.infoshare;
 
+import java.sql.SQLOutput;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Lesson3 {
@@ -156,4 +158,3 @@ public class Lesson3 {
 
     }
 }
-

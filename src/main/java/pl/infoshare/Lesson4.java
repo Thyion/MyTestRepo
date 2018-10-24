@@ -1,6 +1,7 @@
 package pl.infoshare;
 
 import java.io.*;
+import java.net.URL;
 import java.nio.file.*;
 import java.util.List;
 import java.util.Random;
@@ -8,6 +9,9 @@ import java.util.Scanner;
 
 public class Lesson4 {
 
+
+    public Lesson4() throws IOException {
+    }
 
     public static void main(String[] args) throws IOException {
 
@@ -111,28 +115,90 @@ public class Lesson4 {
 //        System.out.println(hits);
 
         //------------------ ZADANIE 4 -------------------------
+//       Scanner tekstUzytkownika = new Scanner(System.in);
+//       String tekst = tekstUzytkownika.nextLine();
+//       char[] tekst1 = new char[tekst.length()];
+//       for (int i = 0; i<tekst.length();i++){
+//           tekst1[i] = tekst.charAt(i);
+//       }
+//
+//       String tekstPo = "";
+//
+//       for (int i = tekst1.length ; i>0;i--){
+//           tekstPo = tekstPo + tekst1[i-1];
+//       }
+//
+//       System.out.println(tekstPo);
+//        System.out.println("sdadas");
+//    }
+//
+//
+//    // druga wersja zadania 4
+//
+//    Scanner sc = new Scanner(System.in);
 
-        Scanner tekstUzytkownika = new Scanner(System.in);
-       String tekst = tekstUzytkownika.nextLine();
-       char[] tekst1 = new char[tekst.length()];
-       for (int i = 0; i<tekst.length();i++){
-           tekst1[i] = tekst.charAt(i);
-       }
+        //------------------ ZADANIE DOMOWE -------------------------
 
-       String tekstPo = "";
 
-       for (int i = tekst1.length ; i>0;i--){
-           tekstPo = tekstPo + tekst1[i-1];
-       }
+        URL oracle = new URL("https://www.w3.org/TR/PNG/iso_8859-1.txt");
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(oracle.openStream()));
 
-       System.out.println(tekstPo);
-        System.out.println("sdadas");
+        PrintWriter zapis = new PrintWriter(new FileWriter("/home/krzysztofb/workspace/MyTestRepo/zassaneZneta.txt"));
+        PrintWriter zapis2 = new PrintWriter(new FileWriter("/home/krzysztofb/workspace/MyTestRepo/zassaneZneta2.txt"));
+        PrintWriter zapis3 = new PrintWriter(new FileWriter("/home/krzysztofb/workspace/MyTestRepo/zassaneZneta3.txt"));
+
+        String inputLine;
+        String jedynki="";
+        String dwojki="";
+
+
+
+
+        while ((inputLine = in.readLine()) != null) {
+
+            System.out.println(inputLine);
+
+            char[] tekst1 = new char[inputLine.length()];
+            char[] tekst2 = new char[inputLine.length()];
+            for (int i = 0;i < tekst1.length; i++) {
+
+                tekst1[i] = inputLine.charAt(i);
+
+            }
+
+
+
+
+            if (tekst1.length != 0) {
+                if (tekst1[0] == '0' || tekst1[0] == '1' || tekst1[0] == '2' || tekst1[0] == '3' || tekst1[0] == '4' || tekst1[0] == '5' || tekst1[0] == '6' || tekst1[0] == '7' || tekst1[0] == '8' || tekst1[0] == '9') {
+
+                    zapis.append(inputLine);
+                    zapis.append(System.lineSeparator());
+                } else if (tekst2[0] == 'A' || tekst2[0] == 'B' || tekst2[0] == 'C' || tekst2[0] == 'D' || tekst2[0] == 'E' || tekst2[0] == 'F') {
+                    zapis3.append(inputLine);
+                    zapis3.append(System.lineSeparator());
+                }
+
+
+                else {
+                    zapis2.append(inputLine);
+                    zapis2.append(System.lineSeparator());
+                }
+            } else {
+                zapis2.append(inputLine);
+                zapis2.append(System.lineSeparator());
+
+
+            }
+
+        }
+        in.close();
+        zapis.close();
+        zapis2.close();
+        zapis3.close();
     }
-
-
-    // druga wersja zadania 4
-
-    Scanner sc = new Scanner(System.in);
-
-
 }
+
+
+

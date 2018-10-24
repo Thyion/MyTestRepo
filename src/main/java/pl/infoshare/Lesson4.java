@@ -126,11 +126,13 @@ public class Lesson4 {
        }
 
        System.out.println(tekstPo);
+        System.out.println("sdadas");
     }
 
 
     // druga wersja zadania 4
 
     Scanner sc = new Scanner(System.in);
+
 
 }

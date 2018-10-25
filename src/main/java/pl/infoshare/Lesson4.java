@@ -145,8 +145,8 @@ public class Lesson4 {
                 new InputStreamReader(oracle.openStream()));
         
 
-        Writer writer = new BufferedWriter(new FileWriter("zassaneZneta.txt"));
-        Writer writer2 = new BufferedWriter(new FileWriter("zassaneZneta2.txt"));
+        Writer writer = new BufferedWriter(new FileWriter("startWithNumber.txt"));
+        Writer writer2 = new BufferedWriter(new FileWriter("startWithLetter.txt"));
         String inputLine;
         
         while ((inputLine = in.readLine()) != null) {

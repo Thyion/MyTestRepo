@@ -1,8 +1,8 @@
 package pl.infoshare.lesson5;
 
-public class Auto {
+class Auto2 {
 
-    public Auto() {
+    Auto2() {
 
     }
 
@@ -47,9 +47,9 @@ public class Auto {
         this.seats = seats;
     }
 
-    private int quantityWheels;
-    private int horses;
-    private String name;
-    private int year;
-    private int seats;
+    int quantityWheels;
+    int horses;
+    String name;
+    int year;
+    int seats;
 }

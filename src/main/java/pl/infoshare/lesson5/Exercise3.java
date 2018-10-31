@@ -23,7 +23,7 @@ public class Exercise3 extends JFrame {
 
     public void initComponents(){
         
-        GroupLayout layout = new GroupLayout(getContentpane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         
         this.getContentPane().setLayout(layout);
         layout.setAutoCreateGaps(true);
@@ -34,20 +34,20 @@ public class Exercise3 extends JFrame {
             .addComponent(textField)
             .addComponent(passwordField)
             .addGroup( 
-            layout.createSequencialGroup()
-            .addCompnent(addUser)
-            .addCompnent(readUsers)
+            layout.createSequentialGroup()
+            .addComponent(addUser)
+            .addComponent(readUsers)
             )
             );
         layout.setVerticalGroup(
-            layout.createSequencialGroup()
+            layout.createSequentialGroup()
             .addComponent(cos)
             .addComponent(textField)
             .addComponent(passwordField)
             .addGroup( 
             layout.createParallelGroup()
-            .addCompnent(addUser)
-            .addCompnent(readUsers)
+            .addComponent(addUser)
+            .addComponent(readUsers)
             )
             );
             

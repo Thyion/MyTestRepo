@@ -19,6 +19,7 @@ public class User implements Serializable{
     public String getUserPassword() {
         return userPassword;
     }
+
     public void setUserName() {
         this.userName = userName;
     }
@@ -41,11 +42,12 @@ public class User implements Serializable{
 
     @Override
     public String toString() {
-        return ("Uzytkownik: " + userName + ", Haslo: " + userPassword);
+
+        return ("Uzytkownik: " + getUserName() + ", Haslo: " + getUserPassword());
     }
 
     static int countUser;
     private String userName;
-    private transient String userPassword;
+    private String userPassword;
 }
 

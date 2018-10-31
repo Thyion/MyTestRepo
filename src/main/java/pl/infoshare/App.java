@@ -1,6 +1,7 @@
 package pl.infoshare;
 
 
+import pl.infoshare.lesson5.Auto;
 
 /**
  * Hello world!

@@ -26,6 +26,8 @@ public class Exercise3 extends JFrame {
         GroupLayout layout = new GroupLayout(getContentpane());
         
         this.getContentPane().setLayout(layout);
+        layout.setAutoCreateGaps(true);
+        layout.setAutoCreateContainerGaps(true);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
             .addComponent(cos)

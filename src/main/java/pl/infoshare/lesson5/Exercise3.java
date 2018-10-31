@@ -31,7 +31,23 @@ public class Exercise3 extends JFrame {
             .addComponent(cos)
             .addComponent(textField)
             .addComponent(passwordField)
-            .addComponent(buttonPanel)
+            .addGroup( 
+            layout.createSequencialGroup()
+            .addCompnent(addUser)
+            .addCompnent(readUsers)
+            )
+            );
+        layout.setVerticalGroup(
+            layout.createSequencialGroup()
+            .addComponent(cos)
+            .addComponent(textField)
+            .addComponent(passwordField)
+            .addGroup( 
+            layout.createParallelGroup()
+            .addCompnent(addUser)
+            .addCompnent(readUsers)
+            )
+            );
             
         buttonPanel.add(addUser);
         buttonPanel.add(readUsers);

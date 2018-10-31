@@ -22,21 +22,32 @@ public class Exercise3 extends JFrame {
     }
 
     public void initComponents(){
-        panel.add(addUser);
-        panel.add(readUsers);
-        panel2.add(cos);
-        panel3.setBackground(Color.GRAY);
+        
+        GroupLayout layout = new GroupLayout(getContentpane());
+        
+        this.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup()
+            .addComponent(cos)
+            .addComponent(textField)
+            .addComponent(passwordField)
+            .addComponent(buttonPanel)
+            
+        buttonPanel.add(addUser);
+        buttonPanel.add(readUsers);
+        //panel2.add(cos);
+        //panel3.setBackground(Color.GRAY);
 
 
-        panel3.setLayout(new BorderLayout());
-        textArea.setBackground(Color.GRAY);
-        textArea.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-        panel3.add(textArea, BorderLayout.SOUTH);
-        panel3.add(textField, BorderLayout.NORTH);
-        panel3.add(passwordField, BorderLayout.CENTER);
-        this.getContentPane().add(panel, BorderLayout.SOUTH);
-        this.getContentPane().add(panel2, BorderLayout.NORTH);
-        this.getContentPane().add(panel3, BorderLayout.CENTER);
+        //panel3.setLayout(new BorderLayout());
+        //textArea.setBackground(Color.GRAY);
+        //textArea.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        //panel3.add(textArea, BorderLayout.SOUTH);
+        //panel3.add(textField, BorderLayout.NORTH);
+        //panel3.add(passwordField, BorderLayout.CENTER);
+        //this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        //this.getContentPane().add(panel2, BorderLayout.NORTH);
+        //this.getContentPane().add(panel3, BorderLayout.CENTER);
         addUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,8 +62,8 @@ public class Exercise3 extends JFrame {
         });
     }
 
-
-    JPanel panel = new JPanel();
+    
+    JPanel buttonPanel = new JPanel();
     JPanel panel2 = new JPanel();
     JPanel panel3 = new JPanel();
     JButton addUser = new JButton("Add user");

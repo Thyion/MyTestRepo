@@ -16,33 +16,33 @@ public class Exercise3_4_5  {
         System.out.println("MENU !!");
         System.out.println("Wybierz 1, 2 lub 0.");
         System.out.println("1. Dodaj kolejnego uzytkownika.\n2. Wyświetl użytkowników.\n0. Zakończ program.");
-        sprawdzLiczbe(podajLiczbe());
+        checkNumber(giveNumber());
     }
     public static void menu2() {
         System.out.println("MENU !!");
         System.out.println("Wybierz 1, 2 lub 0.");
         System.out.println("1. Dodaj kolejnego uzytkownika.\n2. Wróć do menu.\n0. Zakończ program.");
-        sprawdzLiczbe2(podajLiczbe());
+        checkNumber2(giveNumber());
     }
 
-    public static int podajLiczbe() {
+    public static int giveNumber() {
         Scanner in = new Scanner(System.in);
         if(in.hasNextInt())
         return in.nextInt();
         else {
             System.out.println("Miales podac liczbe ... Podaj jeszcze raz");
-            return(podajLiczbe());
+            return(giveNumber());
         }
     }
 
-    public static User podajDaneUzytkownika() {
+    public static User userData() {
         return User.newUser();
     }
 
-    public static void dodajUzytkownika() {
+    public static void addUser() {
         try {
                     ObjectOutputStream outS = new ObjectOutputStream(new GZIPOutputStream(new FileOutputStream("users2.txt"), true));
-                    usersFromFile.add(podajDaneUzytkownika());
+                    usersFromFile.add(userData());
                     outS.writeObject(usersFromFile);
                     outS.close();
                 } catch (IOException e) {
@@ -51,7 +51,7 @@ public class Exercise3_4_5  {
     }
     
     
-    public static void odczytajUzytkonikow() {
+    public static void readUsers() {
         try {
                     ObjectInputStream inS = new ObjectInputStream(new GZIPInputStream(new FileInputStream("users2.txt")));
                     ArrayList usersFromFile = (ArrayList)inS.readObject();
@@ -65,14 +65,14 @@ public class Exercise3_4_5  {
                 };
     }
     
-    public static void sprawdzLiczbe(int i) {
+    public static void checkNumber(int i) {
         if (i==1){
-              dodajUzytkownika();
+              addUser();
               menu2();
         }
         
         else if(i==2){
-              odczytajUzytkonikow();  
+              readUsers();  
               menu();
         }
         else if(i==0){
@@ -82,9 +82,9 @@ public class Exercise3_4_5  {
         }
 
     }
-    public static void sprawdzLiczbe2(int i) {
+    public static void checkNumber2(int i) {
         if (i==1){
-              sprawdzLiczbe(1);      
+              checkNumber(1);      
         }
         else if(i==0){
             System.exit(0);

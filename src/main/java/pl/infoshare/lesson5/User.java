@@ -69,7 +69,7 @@ public class User implements Serializable{
     @Override
     public String toString() {
 
-        return ("Uzytkownik: " + getUserName() + ", Haslo: " + getUserPassword() + ", Typ używkonika: " + getUserType() + "  |||||||||  ");
+        return ("Uzytkownik: " + getUserName() + ", Haslo: " + getUserPassword() + ", Typ używkonika: " + getUserType() + " ");
     }
 
     static int countUser;

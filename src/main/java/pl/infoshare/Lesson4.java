@@ -141,40 +141,82 @@ public class Lesson4 {
 
 
         URL oracle = new URL("https://www.w3.org/TR/PNG/iso_8859-1.txt");
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(oracle.openStream()));
+//        BufferedReader in = new BufferedReader(
+//                new InputStreamReader(oracle.openStream()));
+        DataInput inn = new DataInputStream(oracle.openStream());
+        RandomAccessFile RAF = new RandomAccessFile("baza.txt", "rw"); //"r" - czytamy, "w" zapisujemy, "rw" - czytamy i zapisujemy
         
+        
+        String inputLine ;
+//         inn.skipBytes(500);
+//        for(int i=0; i<6000;i++){
+//            char tCh = inn.readChar();
+////            if(tCh != '\0')
+//                inputLine.append(tCh);
+//        }
+//        RAF.writeBytes(inputLine.toString());
+        while ((inputLine = inn.readLine()) != null) {   
+            RAF.writeBytes(inputLine);
+            RAF.writeBytes(System.lineSeparator());
+        } 
+        System.out.println(RAF.length());
+        RAF.close();
+        
+//        String aaa = in.readLine();
+//        StringBuffer tString = new StringBuffer(30);
+//        aaa.
+//        for(int i=0; i<30;i++){
+//            char tCh = in.read;
+//            if(tCh != '\0')
+//                tString.append(tCh);
+//        }
+//        
+//        
+//        File file = new File("startWithNumber.txt");
+//        Writer writer = new BufferedWriter(new FileWriter(file));
+//        
+//        in.skip(in.readLine().length());
+//        
+//        
+//        String ffff = in.readLine();
+//        System.out.println(ffff);
+        
+        
+        
+                
+        
+        //UDANY POMYSŁ ALE NIE DOSKONALY
 
-        Writer writer = new BufferedWriter(new FileWriter("startWithNumber.txt"));
-        Writer writer2 = new BufferedWriter(new FileWriter("startWithLetter.txt"));
-        String inputLine;
-        
-        while ((inputLine = in.readLine()) != null) {
-            for (int i = 0;((inputLine = in.readLine()) != null); i++){
-                if (i<=5){ 
-                } else {
-                    if(inputLine.length()>32){
-                        if(inputLine.startsWith(" ")){
-                            writer2.write((String) inputLine.subSequence(32, inputLine.length()));
-                            writer2.append(System.lineSeparator());
-                        }else {
-                            writer.write((String) inputLine.subSequence(0, 32));
-                            writer.append(System.lineSeparator());
-                            writer2.write((String) inputLine.subSequence(32, inputLine.length()));
-                            writer2.append(System.lineSeparator());
-                        }
-                    } else if (inputLine.length()<5){
-                        
-                    } else {
-                        writer.write((String) inputLine.subSequence(0, inputLine.length()));
-                        writer.append(System.lineSeparator());
-                    } 
-                }
-            }
-        }      
-        in.close();
-        writer.close();
-        writer2.close();
+//        Writer writer = new BufferedWriter(new FileWriter("startWithNumber.txt"));
+//        Writer writer2 = new BufferedWriter(new FileWriter("startWithLetter.txt"));
+//        String inputLine;
+//        
+//        while ((inputLine = in.readLine()) != null) {
+//            for (int i = 0;((inputLine = in.readLine()) != null); i++){
+//                if (i<=5){ 
+//                } else {
+//                    if(inputLine.length()>32){
+//                        if(inputLine.startsWith(" ")){
+//                            writer2.write((String) inputLine.subSequence(32, inputLine.length()));
+//                            writer2.append(System.lineSeparator());
+//                        }else {
+//                            writer.write((String) inputLine.subSequence(0, 32));
+//                            writer.append(System.lineSeparator());
+//                            writer2.write((String) inputLine.subSequence(32, inputLine.length()));
+//                            writer2.append(System.lineSeparator());
+//                        }
+//                    } else if (inputLine.length()<5){
+//                        
+//                    } else {
+//                        writer.write((String) inputLine.subSequence(0, inputLine.length()));
+//                        writer.append(System.lineSeparator());
+//                    } 
+//                }
+//            }
+//        }      
+//        in.close();
+//        writer.close();
+//        writer2.close();
         
         
         

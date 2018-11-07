@@ -1,15 +1,14 @@
-package pl.infoshare.lesson6.Exercise1;
+package pl.infoshare.lesson6.exercise1;
 
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Pracownik {
 
 
 
 
-    public Pracownik(String name, String surName, String team, Date birthDate) {
+    public Pracownik(String name, String surName, String team, LocalDate birthDate) {
         this.name = name;
         this.surName = surName;
         this.team = team;
@@ -40,11 +39,11 @@ public class Pracownik {
         this.team = team;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -56,6 +55,6 @@ public class Pracownik {
     private String surName;
     private String team;
 
-    private Date birthDate;
+    private LocalDate birthDate;
 
 }

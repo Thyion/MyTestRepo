@@ -41,7 +41,6 @@ public class FileService {
                 listOfDepartments.add(1, listOfDepartment.get(1));
                 listOfHrEmployee = listOfDepartments.get(0);
                 listOfItEmployee = listOfDepartments.get(1);
-                plik.delete();
                 inS.close();
             }
                     

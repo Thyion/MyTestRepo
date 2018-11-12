@@ -10,6 +10,11 @@ public class Employee implements Serializable{
         this.department = department;
         this.salary = salary;
     }
+    public Employee(String name, String surName, String department) {
+        this.name = name;
+        this.surName = surName;
+        this.department = department;
+    }
 
     public String getName() {
         return name;

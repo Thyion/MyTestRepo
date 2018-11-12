@@ -15,41 +15,34 @@ public class InputHandler {
             //Jesli uzytkownik wybierze 1
             case "1": {
                 employeeService.createNewEmployee();
-                //Zerwanie switch
-                menuService.start();
-                //break;
+                 menuService.start();
+                
             }
             //Jesli uzytkownik wybierze 2
             case "2": {
-//                //Wczytanie linii z pliku
-//                List<String> fileLines = new FileService().readLinesFromFile();
-//                //Stworzenie tablicy uzytkownikow
-//                User[] userArray = userService.generateUserArray(fileLines);
-//                //Wypisanie tablicy uzytkownikow na ekran
-//                userService.printUsersFromArray(userArray);
-//
-//                menuService.start();
-//                //Zerwanie switch
-                break;
+                employeeService.deleteEmployee();
+                menuService.start();
+                
             }
-
+            //Jesli uzytkownik wybierze 3
             case "3": {
                 
-                System.out.println(Exercise5.listOfDepartments);
-                System.out.println(Exercise5.listOfHrEmployee);
-                System.out.println(Exercise5.listOfItEmployee);
+                System.out.println("W bazie są pracownicy 2 dzialow: HR i IT.");
+                System.out.println("Pracownicy dzialu HR: ");
+                System.out.println(FileService.listOfHrEmployee);
+                System.out.println("Pracownicy dzialu IT: ");
+                System.out.println(FileService.listOfItEmployee);
                 menuService.start();
             }
-
+            //Jesli uzytkownik wybierze 0
             case "0": {
-                employeeService.saveEmployees();
+                FileService.saveEmployees();
                 System.exit(0);
             }
 
             //Jesli uzytkownik wybierze cokolwiek innego
             default: {
-//                menuService.printError();
-                break;
+                menuService.start();
             }
         }
     }

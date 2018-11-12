@@ -1,8 +1,6 @@
-
 package pl.infoshare.lesson6.exercise5;
 
 import java.io.IOException;
-
 
 public class MenuService {
     private ConsoleInputReader consoleInputReader;
@@ -12,8 +10,7 @@ public class MenuService {
     public MenuService() {
         consoleInputReader = new ConsoleInputReader();
         inputHandler = new InputHandler();
-        employeeService = new EmployeeService();
-        
+        employeeService = new EmployeeService();    
     }
     
     public void start() throws IOException{

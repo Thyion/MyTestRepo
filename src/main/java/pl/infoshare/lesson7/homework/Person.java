@@ -4,9 +4,6 @@ import java.time.LocalDate;
 
 public class Person {
 
-    public Person() {
-    }
-
     public Person(String name, String surName, boolean sex, LocalDate birthDate) {
         this.name = name;
         this.surName = surName;
@@ -32,7 +29,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Osoba: \n Imie: " + name + "\n Nazwisko: " + surName + "\n Plec: " + whatSex(this.sex) + "\n Data urodzenia: " + birthDate;
+        return this.getClass().getSimpleName()+": \n Imie: " + name + "\n Nazwisko: " + surName + "\n Plec: " + whatSex(this.sex) + "\n Data urodzenia: " + birthDate;
     }
 
     public String whatSex(boolean sex){
@@ -46,6 +43,7 @@ public class Person {
     private String surName;
     private boolean sex;
     private LocalDate birthDate;
+
 
 
 }

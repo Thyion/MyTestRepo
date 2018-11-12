@@ -10,6 +10,9 @@ public class Lecturer extends Person {
 
     }
 
+    public void ostryOpierdol(){
+        System.out.println("Ty idioto...");
+    }
 
     public String getAcademicDegree() {
         return academicDegree;
@@ -18,6 +21,7 @@ public class Lecturer extends Person {
     public String toString() {
         return super.toString() + "\n Stopin naukowy: " + academicDegree;
     }
+
 
     private String academicDegree;
 }

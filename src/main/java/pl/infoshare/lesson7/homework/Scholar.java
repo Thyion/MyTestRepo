@@ -16,5 +16,6 @@ public class Scholar extends Student{
         return super.toString() + "\n Stypendium: " + scholarship;
     }
 
+
     private int scholarship;
 }

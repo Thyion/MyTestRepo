@@ -15,23 +15,23 @@ public class Exercise4 {
         Employee employee7 = new Employee("Basia", "Janik", "HR", 3500);
         
         EmployeeJudge workers = new EmployeeJudge();
-        workers.mapa.put(new Employee("Basia", "Janik", "HR", 3500), value);
-        workers.mapa.put(employee1, workers.judgeTheEmployeeSalary(employee1));
-        workers.mapa.put(employee2, workers.judgeTheEmployeeSalary(employee2));
-        workers.mapa.put(employee3, workers.judgeTheEmployeeSalary(employee3));
-        workers.mapa.put(employee4, workers.judgeTheEmployeeSalary(employee4));
-        workers.mapa.put(employee5, workers.judgeTheEmployeeSalary(employee5));
-        workers.mapa.put(employee6, workers.judgeTheEmployeeSalary(employee6));
-        workers.mapa.put(employee7, workers.judgeTheEmployeeSalary(employee7));
+//        workers.mapa.put(new Employee("Basia", "Janik", "HR", 3500), value);
+//        workers.mapa.put(employee1, workers.judgeTheEmployeeSalary(employee1));
+//        workers.mapa.put(employee2, workers.judgeTheEmployeeSalary(employee2));
+//        workers.mapa.put(employee3, workers.judgeTheEmployeeSalary(employee3));
+//        workers.mapa.put(employee4, workers.judgeTheEmployeeSalary(employee4));
+//        workers.mapa.put(employee5, workers.judgeTheEmployeeSalary(employee5));
+//        workers.mapa.put(employee6, workers.judgeTheEmployeeSalary(employee6));
+//        workers.mapa.put(employee7, workers.judgeTheEmployeeSalary(employee7));
         
         
-        System.out.println(workers.mapa);
-        
-        ArrayList nisko = new ArrayList();
-        nisko.add(workers.mapa.get(employee7));
-        System.out.println(workers.mapa.values());
-        workers.mapa.values();
-        System.out.println(nisko);
+//        System.out.println(workers.mapa);
+//
+//        ArrayList nisko = new ArrayList();
+//        nisko.add(workers.mapa.get(employee7));
+//        System.out.println(workers.mapa.values());
+//        workers.mapa.values();
+//        System.out.println(nisko);
                 
     }
     

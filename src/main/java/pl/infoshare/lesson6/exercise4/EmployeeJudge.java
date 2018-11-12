@@ -8,7 +8,7 @@ import pl.infoshare.lesson6.exercise3.Pacjent;
 public class EmployeeJudge {
     
     public EmployeeJudge() {
-       mapa = new HashMap<>(); 
+//       mapa = new HashMap<>();
     }
     public String judgeTheEmployeeSalary(Employee employee){
         if (employee.getSalary()<3000)

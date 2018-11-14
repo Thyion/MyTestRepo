@@ -3,6 +3,10 @@ package pl.infoshare;
 
 import pl.infoshare.lesson5.Auto;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -10,9 +14,9 @@ import pl.infoshare.lesson5.Auto;
 public class App
 {
 
-
     public static void main(String[] args)
     {
+
 
 
         System.out.println( "Hello World!" );

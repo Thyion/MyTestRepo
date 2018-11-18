@@ -1,17 +1,11 @@
 package pl.infoshare.lesson8.homework;
-
 import java.io.IOException;
-
 public class MenuService {
     private ConsoleInputReader consoleInputReader;
     private InputHandler inputHandler;
-
-    private ClassesService classesService;
-
     public MenuService() {
         consoleInputReader = new ConsoleInputReader();
         inputHandler = new InputHandler();
-
     }
     public void start() throws IOException{
         printMenu();

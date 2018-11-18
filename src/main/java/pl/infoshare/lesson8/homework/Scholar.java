@@ -7,7 +7,6 @@ public class Scholar extends Student {
         super(name,surName,sex,indexNumber);
         this.scholarship = scholarship;
     }
-
     public int getScholarship() {
         return scholarship;
     }

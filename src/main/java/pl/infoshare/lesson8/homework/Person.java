@@ -1,6 +1,7 @@
 package pl.infoshare.lesson8.homework;
+import java.io.Serializable;
 import java.time.LocalDate;
-public class Person {
+public class Person implements Serializable{
     public Person(String name, String surName, boolean sex) {
         this.name = name;
         this.surName = surName;

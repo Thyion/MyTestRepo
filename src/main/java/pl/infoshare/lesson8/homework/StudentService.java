@@ -1,15 +1,13 @@
 package pl.infoshare.lesson8.homework;
-
 import java.io.IOException;
-
 public class StudentService {
     private ClassesService classesService;
+    private ConsoleInputReader consoleInputReader;
     public StudentService(){
+        consoleInputReader = new ConsoleInputReader();
         classesService = new ClassesService();
     }
-
     public void createNewStudent() throws IOException {
-
         if(FileService.listOfClasses.isEmpty()){
             System.out.println("Musisz najpierw stworzyć jakąkolwiek klase...");
             classesService.createNewClasses();
@@ -27,53 +25,15 @@ public class StudentService {
                 true,
                 Integer.parseInt(consoleInputReader.getFieldFromUserInput("Index number"))
         );
+    } 
+    public int choseStudent(int s) {
+        for(int i = 1 ; i <= FileService.listOfClasses.get(s).students.size(); i++){
+            System.out.println(" " + i + FileService.listOfClasses.get(s).students.get(i-1).getName() + " " + FileService.listOfClasses.get(s).students.get(i-1).getName());
+        }
+        return (Integer.parseInt(consoleInputReader.getFieldFromUserInput("Który student?"))-1);
     }
-    public void anyClassesExist(){
-
+    public void deleteStudentFromUserInput() {
+        int q = classesService.choseClass();
+        FileService.listOfClasses.get(q).students.remove(choseStudent(q));
     }
-//
-//    public void deleteEmployee() throws IOException {
-//        MenuService menuService = new MenuService();
-//
-//        Employee employee = generateDeleteEmployeeFromUserInput();
-//
-//            if (employee.getDepartment().equals("IT")) {
-//                for(Employee employee1:FileService.listOfItEmployee) {
-//                    if (employee.getName().equals(employee1.getName()) && employee.getSurName().equals(employee1.getSurName())) {
-//                        FileService.listOfItEmployee.remove(employee1);
-//                        System.out.println("Usunięto pracownika : " + employee1.getName() + " " + employee1.getSurName() + " z dzialu " + employee1.getDepartment() + ".");
-//                        menuService.start();
-//                    }
-//                }
-//                System.out.println("Nie ma takiego pracownika");
-//            } else if (employee.getDepartment().equals("HR")) {
-//                for(Employee employee1:FileService.listOfHrEmployee) {
-//                    if (employee.getName().equals(employee1.getName()) && employee.getSurName().equals(employee1.getSurName())) {
-//                        FileService.listOfHrEmployee.remove(employee1);
-//                        System.out.println("Usunięto pracownika : " + employee1.getName() + " " + employee1.getSurName() + " z dzialu " + employee1.getDepartment() + ".");
-//                        menuService.start();
-//                    }
-//                }
-//                System.out.println("Nie ma takiego pracownika");
-//            } else {
-//                System.out.println("Nie ma takiego pracownika.");
-//
-//
-//            }
-//
-//        menuService.start();
-//
-//    }
-
-
-//    public Employee generateDeleteEmployeeFromUserInput() {
-//        ConsoleInputReader consoleInputReader = new ConsoleInputReader();
-//        return new Employee(
-//                consoleInputReader.getFieldFromUserInput("name"),
-//                consoleInputReader.getFieldFromUserInput("surName"),
-//                consoleInputReader.getFieldFromUserInput("department")
-//                )
-//        ;
-//    }
-
 }

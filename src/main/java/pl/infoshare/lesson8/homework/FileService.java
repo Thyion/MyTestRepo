@@ -3,11 +3,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
-
-public class FileService {
+public class FileService {   
     public static void saveClasses(){
         try {
-            ObjectOutputStream outS = new ObjectOutputStream(new GZIPOutputStream(new FileOutputStream("employees.txt")));
+            ObjectOutputStream outS = new ObjectOutputStream(new GZIPOutputStream(new FileOutputStream("classes.txt")));
             outS.writeObject(listOfClasses);
             outS.close();
         } catch (IOException e) {
@@ -21,8 +20,9 @@ public class FileService {
                 plik.createNewFile();
             } else {
                 ObjectInputStream inS = new ObjectInputStream(new GZIPInputStream(new FileInputStream("classes.txt")));
-                listOfClasses = (ArrayList)inS.readObject();
-                inS.close();
+                ArrayList<Classes> classListFromFile = (ArrayList)inS.readObject();
+                listOfClasses.addAll(classListFromFile);
+                inS.close();       
             }
         } catch (IOException | ClassNotFoundException e) {
         }

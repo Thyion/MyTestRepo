@@ -8,23 +8,25 @@ public class DoctorService {
 
 
     private Lekarz lekarz;
-    private Queue<Pacjent> service = new LinkedList();
-
+    
     public DoctorService(Lekarz lekarz){
         this.lekarz = lekarz;
     }
-
-    public Lekarz getLekarz() {
-        return lekarz;
+    
+    public Pacjent callNextPacjent() {
+        return lekarz.getLine().poll();
     }
 
-    public Queue<Pacjent> getService() {
-        return service;
+    public Pacjent whosNext() {
+        return lekarz.getLine().peek();
     }
 
-    public void addPacjentToDoctor() {
-
+    public int getNumberOfPacjentsInQueue() {
+        return lekarz.getLine().size();
     }
 
+    public void addPacjentToDoctorsQueue(Pacjent pacjent){
+        lekarz.getLine().add(pacjent);
+}
 
 }

@@ -1,11 +1,10 @@
 package pl.infoshare.lesson8.homework;
 
-import java.time.LocalDate;
 
 public class Scholar extends Student {
 
-    public Scholar(String name, String surName, boolean sex, LocalDate birthDate, int indexNumber, int scholarship){
-        super(name,surName,sex,birthDate,indexNumber);
+    public Scholar(String name, String surName, boolean sex, int indexNumber, int scholarship){
+        super(name,surName,sex,indexNumber);
         this.scholarship = scholarship;
     }
 

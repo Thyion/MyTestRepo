@@ -1,44 +1,55 @@
 package pl.infoshare.lesson8.homework;
-import pl.infoshare.lesson6.exercise5.EmployeeService;
-import pl.infoshare.lesson6.exercise5.MenuService;
+
 import java.io.IOException;
 
 public class InputHandler {
 
     public void handleUserChoice(String userChoice) throws IOException{
-        EmployeeService employeeService = new EmployeeService();
+        StudentService studentService = new StudentService();
         MenuService menuService = new MenuService();
-        //Obsluga wyboru uzytkownika
+        ClassesService classesService = new ClassesService();
+        LecturerService lecturerService = new LecturerService();
+
         switch (userChoice) {
-            //Jesli uzytkownik wybierze 1
             case "1": {
-                employeeService.createNewEmployee();
-                 menuService.start();
+                studentService.createNewStudent();
+                menuService.start();
 
             }
-            //Jesli uzytkownik wybierze 2
             case "2": {
-                employeeService.deleteEmployee();
+                lecturerService.createNewLecturer();
                 menuService.start();
 
             }
-            //Jesli uzytkownik wybierze 3
             case "3": {
-
-                System.out.println("W bazie są pracownicy 2 dzialow: HR i IT.");
-                System.out.println("Pracownicy dzialu HR: ");
-                System.out.println(FileService.listOfHrEmployee);
-                System.out.println("Pracownicy dzialu IT: ");
-                System.out.println(FileService.listOfItEmployee);
+                classesService.createNewClasses();
                 menuService.start();
             }
-            //Jesli uzytkownik wybierze 0
+            case "4": {
+                System.out.println(FileService.listOfClasses);
+                menuService.start();
+
+            }
+            case "5": {
+                System.out.println(FileService.listOfClasses.get(0).students);
+                menuService.start();
+            }
+            case "6": {
+                System.out.println(FileService.listOfClasses.get(0).lecturer);
+                menuService.start();
+            }
+            case "7": {
+                classesService.deleteClassesFromUserInput();
+                menuService.start();
+            }
+            case "8": {
+                classesService.deleteStudentFromUserInput();
+                menuService.start();
+            }
             case "0": {
-                FileService.saveEmployees();
+                FileService.saveClasses();
                 System.exit(0);
             }
-
-            //Jesli uzytkownik wybierze cokolwiek innego
             default: {
                 menuService.start();
             }

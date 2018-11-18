@@ -4,12 +4,18 @@ import java.util.ArrayList;
 
 public class Classes {
 
-    public Classes(int room, Lecturer lecturer){
+    public Classes(String nameOfClasses, int room){
+        this.nameOfClasses = nameOfClasses;
         students = new ArrayList<>();
         this.room = room;
-        this.lecturer = lecturer;
     }
 
+    @Override
+    public String toString() {
+        return "Zajęcia: " + nameOfClasses + "\nSala: " + room;
+    }
+
+    String nameOfClasses;
     Lecturer lecturer;
     int room;
     ArrayList<Student> students;

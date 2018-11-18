@@ -1,11 +1,11 @@
 package pl.infoshare.lesson8.homework;
 import java.time.LocalDate;
 public class Person {
-    public Person(String name, String surName, boolean sex, LocalDate birthDate) {
+    public Person(String name, String surName, boolean sex) {
         this.name = name;
         this.surName = surName;
         this.sex = sex;
-        this.birthDate = birthDate;
+        //this.birthDate = birthDate;
     }
     public String getName() {
         return name;
@@ -16,9 +16,9 @@ public class Person {
     public boolean isSex() {
         return sex;
     }
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
+    //public LocalDate getBirthDate() {
+    //    return birthDate;
+    //}
     @Override
     public String toString() {
         return this.getClass().getSimpleName()+": \n Imie: " + name + "\n Nazwisko: " + surName + "\n Plec: " + whatSex(this.sex) + "\n Data urodzenia: " + birthDate;

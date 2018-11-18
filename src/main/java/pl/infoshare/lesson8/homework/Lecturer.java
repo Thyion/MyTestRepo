@@ -1,8 +1,8 @@
 package pl.infoshare.lesson8.homework;
 import java.time.LocalDate;
 public class Lecturer extends Person {
-    public Lecturer(String name, String surName, boolean sex, LocalDate birthDate, String academicDegree){
-        super(name, surName, sex, birthDate);
+    public Lecturer(String name, String surName, boolean sex,String academicDegree){
+        super(name, surName, sex);
         this.academicDegree = academicDegree;
     }
     public String toString() {

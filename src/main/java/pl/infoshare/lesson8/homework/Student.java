@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Student extends Person {
 
-    public Student(String name, String surName, boolean sex, LocalDate birthDate, int indexNumber){
-        super(name, surName, sex, birthDate);
+    public Student(String name, String surName, boolean sex, int indexNumber){
+        super(name, surName, sex);
         this.indexNumber = indexNumber;
 
     }

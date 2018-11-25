@@ -17,6 +17,6 @@ public class Exercise1 {
         Krzeslo krzeslo2 = new Krzeslo(5, "drewno");
         mapa.put(krzeslo1, "ikea");
         mapa.put(krzeslo2, "obi");
-        mapa.forEach((key, value) -> System.out.println(key + " " + value));
+        //mapa.forEach((key, value) -> System.out.println(key + " " + value));
     }
 }

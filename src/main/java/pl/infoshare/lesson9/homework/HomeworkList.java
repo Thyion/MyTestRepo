@@ -1,16 +1,22 @@
+
 package pl.infoshare.lesson9.homework;
 
 import java.util.ArrayList;
 
-public class HomeworkList {
 
-    public <T, K>HomeworkList(T a, K b) {
-       pair.add(a);
-       pair.add(b);
+public interface HomeworkList<T, K> {
 
-    }
-
-    private ArrayList pair = new ArrayList();
+    public <T, K> void HomeworkLista(T a, K b);
+    
+    
+    public <T, K>void Put(T a, K b);
+    
+    public T getKey();    
+    public K getValue();
+    
+    ArrayList key = new ArrayList();
+    ArrayList value = new ArrayList();
+   
 
 
 }

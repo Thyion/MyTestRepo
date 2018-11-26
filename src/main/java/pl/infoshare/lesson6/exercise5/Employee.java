@@ -1,5 +1,7 @@
 package pl.infoshare.lesson6.exercise5;
 
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.io.Serializable;
 
 public class Employee implements Serializable{
@@ -36,7 +38,16 @@ public class Employee implements Serializable{
     public String toString() {
         return (name + " " + surName + " from " + department);
     }
-   
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder()
+                .append(name)
+                .append(salary)
+                .build();
+
+    }
+
     private String name;
     private String surName;
     private String department;

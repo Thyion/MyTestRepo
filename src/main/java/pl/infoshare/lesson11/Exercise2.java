@@ -49,7 +49,7 @@ public class Exercise2 {
             int counterOfWords = 0;
             int[] counter = {0};
 
-            numberts.forEach(p->counter[0]+=);
+            numberts.forEach(p->counter[0]+=1);
 
 //            for (int numer: numberts){
 //                counterOfWords = counterOfWords + numer;

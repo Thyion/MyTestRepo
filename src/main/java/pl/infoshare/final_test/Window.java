@@ -1,6 +1,5 @@
 package pl.infoshare.final_test;
 
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.*;
@@ -31,9 +30,7 @@ public class Window extends JFrame {
         public Object remove(int index){
             lista.remove(index);
             return super.remove(index);
-
         }
-
         ArrayList lista  = new ArrayList();
     };
     public JList lista = new JList(modelListy);
@@ -94,6 +91,8 @@ public class Window extends JFrame {
         this.getContentPane().setLayout(layout);
 
         this.pack();
+
+
 
     }
 
@@ -179,6 +178,8 @@ public class Window extends JFrame {
                     }
 
                     zOutS.close();
+                    modelListy.clear();
+
 
                 }
                 catch(IOException e) {
@@ -198,7 +199,7 @@ public class Window extends JFrame {
 
             int counter;
             while ((counter = inS.read(tmpData, 0, BUFOR)) != -1)
-                //te -1 oznacza ze wykonuje sie dopuki nie jest koniec strumienia("pliku")
+
                 zOutS.write(tmpData, 0, counter);
 
             zOutS.closeEntry();
@@ -211,16 +212,16 @@ public class Window extends JFrame {
             for (int i = 0;i < nazwyPlikowIKatalogow.length; i++) {
 
                 File p = new File(nazwaSciezki.getPath(), nazwyPlikowIKatalogow[i]);
-                //System.out.println(p.getName());
+
 
 
 
                 if (p.isFile())
                     listaSciezek.add(p);
-                //wypisze tylko same pliki /\/\
+
                 if (p.isDirectory())
                     wypiszSciezki(new File(p.getPath()));
-                //przeszuka wszystkie foldery
+
             }
         }
 
@@ -228,26 +229,6 @@ public class Window extends JFrame {
         ArrayList listaSciezek = new ArrayList();
         public static final int BUFOR = 1024;
 
-        private DefaultListModel modelListy = new DefaultListModel(){
-            @Override
-            public void addElement(Object obj) {
-                lista.add(obj);
-                super.addElement(((File)obj).getName());
-            }
-            @Override
-            public Object get(int index) {
-                return lista.get(index);
-            }
-
-            @Override
-            public Object remove(int index){
-                lista.remove(index);
-                return super.remove(index);
-
-            }
-
-            ArrayList lista  = new ArrayList();
-        };
     }
 
 }

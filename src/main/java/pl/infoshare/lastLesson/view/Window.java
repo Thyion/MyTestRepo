@@ -1,6 +1,8 @@
 package pl.infoshare.lastLesson.view;
 
-import pl.infoshare.lastLesson.view.panel.MainPanel;
+
+
+import pl.infoshare.lastLesson.view.component.tabbedPane.MainTabbedPane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,16 +14,15 @@ public class Window extends JFrame {
 
     public Window() throws HeadlessException {
         super(TITLE);
-        addComponents();
         configureWindow();
+        addComponents();
     }
 
     private void addComponents(){
-        add(new MainPanel(), BorderLayout.CENTER);
+        add(new MainTabbedPane());
     }
 
     private void configureWindow(){
-        setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(SIZE);
         setVisible(true);

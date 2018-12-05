@@ -4,7 +4,7 @@ import pl.infoshare.lastLesson.view.panel.BasePanel;
 
 public class UserListTab extends BasePanel {
 
-    private static final String TITLE = "User list";
+    private final String TITLE = "User list";
 
     @Override
     protected void configureComponent() {
@@ -21,5 +21,7 @@ public class UserListTab extends BasePanel {
 
     }
 
-
+    public String getTitle() {
+        return TITLE;
+    }
 }

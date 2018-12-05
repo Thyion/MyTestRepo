@@ -11,7 +11,15 @@
 //
 //public class Akcja extends AbstractAction {
 //
+//    private JList lista;
+//
 //    public Akcja(String nazwa, String opis, String klawiaturowySkrot) {
+//        this.putValue(Action.NAME, nazwa);
+//        this.putValue(Action.SHORT_DESCRIPTION, opis);
+//        this.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(klawiaturowySkrot));
+//    }
+//    public Akcja(JList lista, String nazwa, String opis, String klawiaturowySkrot) {
+//        this.lista = lista;
 //        this.putValue(Action.NAME, nazwa);
 //        this.putValue(Action.SHORT_DESCRIPTION, opis);
 //        this.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(klawiaturowySkrot));
@@ -31,7 +39,7 @@
 //        wybieracz.setCurrentDirectory(new File(System.getProperty("user.dir")));
 //        wybieracz.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 //        wybieracz.setMultiSelectionEnabled(true);
-//        int tmp = wybieracz.showDialog(rootPane, "Dodaj do archiwum");
+//        int tmp = wybieracz.showDialog(null, "Dodaj do archiwum");
 //
 //        if (tmp == JFileChooser.APPROVE_OPTION) {
 //            File[] sciezki = wybieracz.getSelectedFiles();
@@ -66,7 +74,7 @@
 //    private void stworzArchiwumZip() {
 //        wybieracz.setCurrentDirectory(new File(System.getProperty("user.dir")));
 //        wybieracz.setSelectedFile(new File(System.getProperty("user.dir")+File.separator+"moja nazwa.zip"));
-//        int tmp = wybieracz.showDialog(rootPane, "Kompresuj");
+//        int tmp = wybieracz.showDialog(null, "Kompresuj");
 //
 //        if(tmp == JFileChooser.APPROVE_OPTION)
 //        {

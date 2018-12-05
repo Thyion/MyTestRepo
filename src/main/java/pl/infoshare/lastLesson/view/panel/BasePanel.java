@@ -1,6 +1,7 @@
 package pl.infoshare.lastLesson.view.panel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public abstract class BasePanel extends JPanel {
 
